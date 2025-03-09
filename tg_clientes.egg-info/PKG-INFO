@@ -1,0 +1,16 @@
+Metadata-Version: 2.2
+Name: tg_clientes
+Version: 0.1
+Summary: Aplicación TurboGears de gestión de clientes
+Author: Pablo Techera
+Author-email: ptechersosa@icloud.com
+Requires-Dist: TurboGears2
+Requires-Dist: SQLAlchemy
+Requires-Dist: psycopg2
+Requires-Dist: PasteDeploy
+Requires-Dist: Jinja2
+Requires-Dist: alembic
+Dynamic: author
+Dynamic: author-email
+Dynamic: requires-dist
+Dynamic: summary

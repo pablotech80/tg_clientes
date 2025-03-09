@@ -1,0 +1,5 @@
+[gearbox.command]
+setup-app = tg_clientes.websetup:init_setup
+
+[paste.app_factory]
+main = tg_clientes.config.middleware:make_app

@@ -1,0 +1,6 @@
+TurboGears2
+SQLAlchemy
+psycopg2
+PasteDeploy
+Jinja2
+alembic
