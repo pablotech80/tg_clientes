@@ -39,6 +39,11 @@
             color: red;
             font-size: 14px;
             margin-bottom: 10px;
+            display: none; /* Por defecto oculto */
+        }
+
+        .show-error {
+            display: block; /* Mostrar solo cuando hay error */
         }
 
         label {
@@ -93,9 +98,10 @@
 <body>
     <div class="container">
         <h2>Iniciar Sesión</h2>
-        {% if request.GET.get('error') %}
-            <p class="error-message">Usuario o contraseña incorrectos</p>
-        {% endif %}
+        <p id="error-message" class="error-message {% if request.GET.get('error') %}show-error{% endif %}">
+            Usuario o contraseña incorrectos
+        </p>
+
         <form method="post" action="/auth/authenticate">
             <label for="username">Usuario:</label>
             <input type="text" id="username" name="username" required>
@@ -110,5 +116,17 @@
             <p>¿Olvidaste tu contraseña? <a href="#">Recupérala aquí</a></p>
         </div>
     </div>
+
+    <script>
+        // Ocultar el mensaje de error después de 3 segundos
+        window.onload = function() {
+            setTimeout(() => {
+                let errorMessage = document.getElementById("error-message");
+                if (errorMessage) {
+                    errorMessage.style.display = "none";
+                }
+            }, 3000);
+        };
+    </script>
 </body>
 </html>
