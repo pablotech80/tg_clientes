@@ -1,19 +1,22 @@
-from tg.configuration.app_config import AppConfig
+from tg.configuration import AppConfig
+
 from tg import TGController, expose
+from tg_clientes.config.app_cfg import custom_config
 
 import tg_clientes
 import tg_clientes.model as model
+
 
 class RootController(TGController):
     @expose()
     def index(self):
         return "¡TurboGears está funcionando correctamente!"
 
+
 def make_app(global_conf, **app_conf):
     """Función de entrada para crear la aplicación TurboGears."""
-    app_cfg = AppConfig(minimal=True, root_controller=RootController())
 
-    # Aquí estaba el error
-    app_cfg.package = tg_clientes  # Antes estaba mal apuntando a config.package
+    # Usar la configuración personalizada
+    custom_config.root_controller = RootController()
 
-    return app_cfg.make_wsgi_app()
+    return custom_config.make_wsgi_app()
