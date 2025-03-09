@@ -8,10 +8,10 @@ from dotenv import load_dotenv
 load_dotenv()
 
 class AuthController(TGController):
-    @expose('tg_clientes.templates.login')
+    @expose()
     def login(self, came_from='/'):
         """Muestra el formulario de login"""
-        return dict(came_from=came_from)
+        return "<h1>¡Página de login funcionando!</h1>"
 
     @expose()
     def authenticate(self, username, password):
@@ -28,13 +28,13 @@ class AuthController(TGController):
         print(f"Contraseña esperada: {admin_password}")
 
         if username == admin_username and password == admin_password:
-            print("✅ Autenticación exitosa")  # 👀 Debug
+            print("Autenticación exitosa")  # 👀 Debug
             session['user'] = username  # Guardar en la sesión
             session.save()
             print(f"Sesión guardada: {session}")  # 👀 Debug
             redirect('/clientes')  # Redirigir al CRUD
         else:
-            print("❌ Autenticación fallida")  # 👀 Debug
+            print("Autenticación fallida")  # 👀 Debug
             redirect('/auth/login?error=1')
 
     @expose()
@@ -42,5 +42,9 @@ class AuthController(TGController):
         """Cierra sesión y redirige al login"""
         session.pop('user', None)
         session.save()
-        print("🛑 Sesión cerrada")  # 👀 Debug
+        print("Sesión cerrada")  # 👀 Debug
         redirect('/auth/login')
+
+    @expose('templates.test')
+    def test(self):
+        return {}
