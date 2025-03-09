@@ -7,4 +7,5 @@ tg_clientes.egg-info/entry_points.txt
 tg_clientes.egg-info/requires.txt
 tg_clientes.egg-info/top_level.txt
 tg_clientes/config/__init__.py
+tg_clientes/config/app_cfg.py
 tg_clientes/config/middleware.py
