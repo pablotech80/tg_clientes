@@ -1,6 +1,6 @@
 # 🚀 Prueba Técnica en TurboGears  
 
-Este repositorio contiene mi implementación de la prueba técnica en **TurboGears**. 
+Este repositorio contiene mi implementación de la prueba técnica en **TurboGears** para [Polarissi](https://www.polarissi.com) 
 Durante el desarrollo, logré avanzar en varias funcionalidades clave, 
 pero también encontré algunas dificultades que documenté en el **Pull Request**.  
 
