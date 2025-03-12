@@ -1,5 +1,0 @@
-TurboGears2
-SQLAlchemy
-psycopg2
-Jinja2
-python-dotenv
