@@ -22,19 +22,19 @@ class AuthController(TGController):
         admin_username = os.getenv("ADMIN_USERNAME", "admin")
         admin_password = os.getenv("ADMIN_PASSWORD", "admin")
 
-        print(f"Usuario ingresado: {username}")  # 👀 Debug
+        print(f"Usuario ingresado: {username}")
         print(f"Contraseña ingresada: {password}")
         print(f"Usuario esperado: {admin_username}")
         print(f"Contraseña esperada: {admin_password}")
 
         if username == admin_username and password == admin_password:
-            print("Autenticación exitosa")  # 👀 Debug
+            print("Autenticación exitosa")
             session['user'] = username  # Guardar en la sesión
             session.save()
-            print(f"Sesión guardada: {session}")  # 👀 Debug
+            print(f"Sesión guardada: {session}")
             redirect('/clientes')  # Redirigir al CRUD
         else:
-            print("Autenticación fallida")  # 👀 Debug
+            print("Autenticación fallida")
             redirect('/auth/login?error=1')
 
     @expose()
@@ -42,7 +42,7 @@ class AuthController(TGController):
         """Cierra sesión y redirige al login"""
         session.pop('user', None)
         session.save()
-        print("Sesión cerrada")  # 👀 Debug
+        print("Sesión cerrada")
         redirect('/auth/login')
 
     @expose('templates.test')

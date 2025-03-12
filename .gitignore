@@ -1,6 +1,70 @@
+#  Ignorar entornos virtuales
 .venv/
+venv/
+env/
+
+#  Ignorar archivos compilados de Python
 __pycache__/
 *.pyc
 *.pyo
+*.pyd
+
+# Ignorar base de datos local de desarrollo
 development.db
+
+#  Ignorar archivos de configuración y credenciales sensibles
 .env
+*.env
+config/settings_local.py
+
+#  Ignorar archivos de TurboGears y dependencias
+*.egg-info/
+*.egg
+.eggs/
+*.log
+pip-log.txt
+pip-delete-this-directory.txt
+*.sqlite3
+
+#  Ignorar archivos de caché
+.cache/
+*.swp
+*.swo
+*.swn
+
+#  Ignorar configuraciones de IDEs y editores de texto
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+#  Ignorar archivos de Docker y contenedores (si usas Docker)
+docker-compose.override.yml
+.dockerignore
+
+# Ignorar archivos de compilación de C y C++
+*.o
+*.so
+*.dylib
+
+#  Ignorar archivos de logs y dumps
+*.log
+nohup.out
+*.pid
+*.seed
+
+#  Ignorar archivos de cobertura de pruebas
+.coverage
+htmlcov/
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+#  Ignorar archivos de control de versiones locales
+*.orig
+*.rej
+
+# Ignorar directorios
+tg_clientes.egg-info/
