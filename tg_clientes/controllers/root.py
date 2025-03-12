@@ -18,3 +18,4 @@ print("Rutas disponibles en RootController:")
 for attr in dir(RootController):
     if not attr.startswith("_"):
         print(f"/{attr}")
+
