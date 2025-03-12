@@ -1,0 +1,4 @@
+recursive-include polaris_core/public *
+include polaris_core/public/favicon.ico
+recursive-include polaris_core/i18n *
+recursive-include polaris_core/templates *
